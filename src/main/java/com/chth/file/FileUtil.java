@@ -16,12 +16,15 @@ import java.nio.charset.StandardCharsets;
 
 public class FileUtil {
 
+
+
     /**
      * 以行的方式读取文件,并输出到一个新建的文件中去
-     *
-     * @param path
+     * @param path 源文件path
+     * @param newFilePath 新文件path
+     * @throws IOException
      */
-    public static void readFileByLine(String path) throws IOException {
+    public static void readFileByLine(String path,String newFilePath) throws IOException {
 
         //通过一个已经存在的文件打开文件字节输入流
         val inputStream = FileUtils.openInputStream(new File(path));
@@ -31,7 +34,7 @@ public class FileUtil {
 
 
         //新建一个文件，打开文件字节输出流
-        val outputStream = FileUtils.openOutputStream(new File("C:\\Users\\Administrator\\Desktop\\text2.txt"));
+        val outputStream = FileUtils.openOutputStream(new File(newFilePath));
 
         val wirter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
 
