@@ -6,16 +6,17 @@ import com.chth.util.CharacterType;
  * @author: 程泰恒
  * @date: 2019/3/9 14:52
  */
+
 public class RegularStringUtil {
 
     /**
-     * 字符串通过正则表达式获取相对应的字符
+     * 字符串通过字符类型集合获取相对应的字符
      *
      * @param string 字符串
      * @param args   字符类型
      * @return
      */
-    public static String getStringByRegex(String string, CharacterType... args) {
+    public static String getStringByCharacterTypes(String string, CharacterType... args) {
         String regex = getRegexByCharacterTypes(args).replace("[", "[^");
         return string.replaceAll(regex, "");
     }
@@ -55,6 +56,7 @@ public class RegularStringUtil {
      * @return
      */
     private static String getRegexNodeByCharacterType(CharacterType characterType) {
+
         switch (characterType) {
             case 中文:
                 return "\\u4e00-\\u9fa5";
