@@ -4,15 +4,14 @@ import java.lang.reflect.Parameter;
 
 /**
  * @author: 程泰恒
- * @date: 2019/8/6 15:42
  */
 
 public class TodoubleUtil {
 
     /**
      * 字符串变为double类型
-     * @param param
-     * @return
+     * @param param String类型参数
+     * @return Long
      */
     public static double stringTodouble(String param){
         return Double.valueOf(param);
@@ -20,8 +19,8 @@ public class TodoubleUtil {
 
     /**
      * Integer或int类型转换成double类型
-     * @param param
-     * @return
+     * @param param Integer类型参数
+     * @return double
      */
     public static double integerTodouble(Integer param) {
         return param;
@@ -29,8 +28,8 @@ public class TodoubleUtil {
 
     /**
      *  Long或者long类型转换成double类型
-     * @param param
-     * @return
+     * @param param Long类型参数
+     * @return double
      */
     public static double longTodouble(Long  param) {
         return  param;

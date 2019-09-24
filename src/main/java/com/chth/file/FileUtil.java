@@ -11,7 +11,6 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * @author: 程泰恒
- * @date: 2019/3/9 16:33
  */
 
 public class FileUtil {
@@ -22,7 +21,7 @@ public class FileUtil {
      * 以行的方式读取文件,并输出到一个新建的文件中去
      * @param path 源文件path
      * @param newFilePath 新文件path
-     * @throws IOException
+     * @throws IOException 抛出io异常
      */
     public static void readFileByLine(String path,String newFilePath) throws IOException {
 

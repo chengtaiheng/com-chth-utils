@@ -7,27 +7,43 @@
     <groupId>com.github.chengtaiheng</groupId>
     <artifactId>com-chth-utils</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <description> a tool about Java class</description>
 
     <properties>
         <pinyin4j.version>2.5.0</pinyin4j.version>
         <lombok.version>1.18.6</lombok.version>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gpg.keyname>Cheng Taiheng (this is a key for maven project release)</gpg.keyname>
     </properties>
+
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <email>chth668@163.com</email>
+            <name>Cheng Taiheng</name>
+            <url>https://github.com/chengtaiheng</url>
+            <id>chengtaiheng</id>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <url>https://github.com/chengtaiheng/com-chth-utils/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <scm>
+        <url>https://github.com/chengtaiheng/com-chth-utils</url>
+        <connection>scm:git:https://git@github.com/Jimmie00x0000/PointCloudUtil.git</connection>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -49,5 +65,112 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>${basedir}/src/test/resources</directory>
+            </testResource>
+
+        </testResources>
+
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+            <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <keyname>${gpg.keyname}</keyname>
+                            <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

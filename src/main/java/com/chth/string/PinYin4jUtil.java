@@ -8,7 +8,6 @@ import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombi
 
 /**
  * @author: 程泰恒
- * @date: 2019/3/7 11:32
  */
 public class PinYin4jUtil {
 
@@ -16,7 +15,7 @@ public class PinYin4jUtil {
      * 获取中文串拼音首字母，英文字符不变
      *
      * @param chinese 汉字串
-     * @return
+     * @return String
      */
     public static String getFirstSpell(String chinese) {
         StringBuffer pybf = new StringBuffer();
@@ -47,7 +46,7 @@ public class PinYin4jUtil {
      * 获取汉字串全拼
      *
      * @param chinese 汉字串
-     * @return
+     * @return String
      */
     public static String getFullSpell(String chinese) {
         StringBuffer pybf = new StringBuffer();

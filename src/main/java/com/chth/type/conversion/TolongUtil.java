@@ -2,15 +2,14 @@ package com.chth.type.conversion;
 
 /**
  * @author: 程泰恒
- * @date: 2019/8/6 9:14
  */
 public class TolongUtil {
 
     /**
      * String类型转换为long类型
      *
-     * @param string
-     * @return
+     * @param string String类型参数
+     * @return long
      */
     public static long stringTolong(String string) {
         return Long.valueOf(string);
@@ -19,8 +18,8 @@ public class TolongUtil {
     /**
      * double类型四舍五入转变成long类型
      *
-     * @param param
-     * @return
+     * @param param Double类型参数
+     * @return long
      */
     public static long doubleRoundTolong(Double param) {
         return Math.round(param);
@@ -29,7 +28,8 @@ public class TolongUtil {
     /**
      * double转换成较小的整数
      *
-     * @param param
+     * @param param Double类型参数
+     * @return long类型返回结果
      */
     public static long doubleFloorTolong(Double param) {
         return  (long)Math.floor(param);
@@ -38,8 +38,8 @@ public class TolongUtil {
     /**
      * Float四舍五入转变成long类型
      *
-     * @param param
-     * @return
+     * @param param Float类型参数
+     * @return long
      */
     public static long floatRoundTolong(Float param) {
         return (long) Math.round(param);
@@ -48,8 +48,8 @@ public class TolongUtil {
     /**
      * Float摸地板（变为较小的整数）转变为long类型
      *
-     * @param param
-     * @return
+     * @param param Float类型参数
+     * @return long
      */
     public static long floatFloorTolong(Float param) {
         return (long) Math.floor(param);

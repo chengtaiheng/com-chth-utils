@@ -7,7 +7,6 @@ import java.util.LinkedList;
 
 /**
  * @author: 程泰恒
- * @date: 2019/3/13 16:22
  */
 public class JavaComparator {
     public static final Comparator<JavaComparator.JavaComparatorEntity> JAVA_COMPARATOR_ENTITY_COMPARATOR = (o1, o2) -> {

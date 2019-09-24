@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 /**
  * @author: 程泰恒
- * @date: 2019/6/17 19:24
  */
 public class ListUtil {
 
