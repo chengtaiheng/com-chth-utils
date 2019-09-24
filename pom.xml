@@ -6,22 +6,23 @@
 
     <groupId>com.github.chengtaiheng</groupId>
     <artifactId>com-chth-utils</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <description> a tool about Java class</description>
 
     <properties>
         <pinyin4j.version>2.5.0</pinyin4j.version>
+        <java.version>1.8</java.version>
         <lombok.version>1.18.6</lombok.version>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <gpg.keyname>Cheng Taiheng (this is a key for maven project release)</gpg.keyname>
+        <encoding>UTF-8</encoding>
     </properties>
-
 
     <licenses>
         <license>
-            <name>MIT License</name>
-            <url>https://opensource.org/licenses/MIT</url>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -41,8 +42,10 @@
     </issueManagement>
 
     <scm>
-        <url>https://github.com/chengtaiheng/com-chth-utils</url>
-        <connection>scm:git:https://git@github.com/Jimmie00x0000/PointCloudUtil.git</connection>
+        <tag>master</tag>
+        <url>git@github.com:chengtaiheng/com-chth-utils.git</url>
+        <connection>scm:git:git@github.com/chengtaiheng/com-chth-utils.git</connection>
+        <developerConnection>scm:git:git@github.com:chengtaiheng/com-chth-utils.git</developerConnection>
     </scm>
 
     <dependencies>
@@ -65,87 +68,182 @@
         </dependency>
     </dependencies>
 
+    <!--<build>-->
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<directory>${basedir}/src/main/resources</directory>-->
+            <!--</resource>-->
+        <!--</resources>-->
+        <!--<testResources>-->
+            <!--<testResource>-->
+                <!--<directory>${basedir}/src/test/resources</directory>-->
+            <!--</testResource>-->
+        <!--</testResources>-->
+
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.sonatype.plugins</groupId>-->
+                <!--<artifactId>nexus-staging-maven-plugin</artifactId>-->
+                <!--<version>1.6.7</version>-->
+                <!--<extensions>true</extensions>-->
+                <!--<configuration>-->
+                    <!--<serverId>sonatype</serverId>-->
+                    <!--<nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-clean-plugin</artifactId>-->
+                <!--<version>3.0.0</version>-->
+            <!--</plugin>-->
+            <!--&lt;!&ndash; see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging &ndash;&gt;-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-source-plugin</artifactId>-->
+                <!--<version>2.2.1</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>attach-sources</id>-->
+                        <!--<goals>-->
+                            <!--<goal>jar-no-fork</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-resources-plugin</artifactId>-->
+                <!--<version>3.0.2</version>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<version>3.7.0</version>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-surefire-plugin</artifactId>-->
+                <!--<version>2.22.2</version>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-jar-plugin</artifactId>-->
+                <!--<version>3.0.2</version>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-install-plugin</artifactId>-->
+                <!--<version>2.5.2</version>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-site-plugin</artifactId>-->
+                <!--<version>3.3</version>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-project-info-reports-plugin</artifactId>-->
+                <!--<version>2.7</version>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-deploy-plugin</artifactId>-->
+                <!--<version>2.8.2</version>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-gpg-plugin</artifactId>-->
+                <!--<version>1.6</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>sign-artifacts</id>-->
+                        <!--<phase>verify</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>sign</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<keyname>${gpg.keyname}</keyname>-->
+                            <!--<passphraseServerId>${gpg.keyname}</passphraseServerId>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                <!--<version>3.0.1</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>attach-javadocs</id>-->
+                        <!--<goals>-->
+                            <!--<goal>jar</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<source>8</source>-->
+                    <!--<target>8</target>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</build>-->
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>release</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+
         <resources>
             <resource>
-                <directory>${basedir}/src/main/resources</directory>
+                <directory>${project.basedir}/src/main/java</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/.gitkeep</exclude>
+                    <exclude>**/*.bak</exclude>
+                    <exclude>**/*.java</exclude>
+                    <exclude>**/*.groovy</exclude>
+                    <exclude>**/*.scala</exclude>
+                    <exclude>**/*.kotlin</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/.gitkeep</exclude>
+                    <exclude>**/*.bak</exclude>
+                </excludes>
             </resource>
         </resources>
-        <testResources>
-            <testResource>
-                <directory>${basedir}/src/test/resources</directory>
-            </testResource>
-
-        </testResources>
-
 
         <plugins>
             <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.0.0</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <debug>false</debug>
+                    <encoding>${encoding}</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
-            <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
                         <goals>
-                            <goal>jar-no-fork</goal>
+                            <goal>jar</goal>
                         </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>2.5.2</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.3</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.7</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                        <configuration>
-                            <keyname>${gpg.keyname}</keyname>
-                            <passphraseServerId>${gpg.keyname}</passphraseServerId>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -153,6 +251,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.1</version>
+                <configuration>
+                    <encoding>${encoding}</encoding>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -164,13 +265,40 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <encoding>${encoding}</encoding>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
