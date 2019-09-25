@@ -6,8 +6,10 @@
 
     <groupId>com.github.chengtaiheng</groupId>
     <artifactId>com-chth-utils</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <description> a tool about Java class</description>
+    <name>com-chth-utils</name>
+    <url>https://github.com/chengtaiheng/com-chth-utils</url>
 
     <properties>
         <pinyin4j.version>2.5.0</pinyin4j.version>
