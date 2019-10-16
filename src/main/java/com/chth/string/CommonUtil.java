@@ -1,5 +1,7 @@
 package com.chth.string;
 
+import java.util.Objects;
+
 /**
  * @author: 程泰恒
  */
@@ -23,5 +25,23 @@ public class CommonUtil {
 
         return contains;
 
+    }
+
+    /**
+     * 将一段字符串中的一段字符串用另外一段字符串替换
+     *
+     * @param source 源字符串
+     * @param replace 替换字符串
+     * @param startIndex 起始替换下标
+     * @param endIndex 结束替换下标(不包含)
+     * @return 返回结果
+     */
+    public static String replace(String source,String replace,int startIndex,int endIndex){
+
+        if(!Objects.isNull(source)){
+            return new StringBuilder(source).replace(startIndex, endIndex, replace).toString();
+        }
+
+        return "";
     }
 }
